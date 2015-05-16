@@ -4,6 +4,7 @@
   using std::endl;
 
 #include "ToDoCore/ToDo.h"
+using ToDoCore::ToDo;
 
 #define EXPECT_EQUAL(test, expect) equalityTest( test,  expect, \
                                                 #test, #expect, \

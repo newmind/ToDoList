@@ -1,5 +1,7 @@
 #include "ToDo.h"
 
+namespace ToDoCore
+{
 
 ToDo::ToDo()
 {
@@ -17,14 +19,14 @@ size_t ToDo::size() const
 
 
 void ToDo::addTask(
-    const std::string& task
+        const std::string &task
 )
 {
     this_tasks.push_back(task);
 }
 
 std::string ToDo::getTask(
-    size_t index
+        size_t index
 ) const
 {
     if (index < this_tasks.size())
@@ -35,4 +37,6 @@ std::string ToDo::getTask(
     {
         return "";
     }
+}
+
 }
