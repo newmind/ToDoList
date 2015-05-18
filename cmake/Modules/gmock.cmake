@@ -8,6 +8,12 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
     option(gtest_force_shared_crt
            "Use shared (DLL) run-time lib even when Google Test is built as static lib."
            ON)
+    
+    # Google Test in Visual Studio 2012
+    # http://stackoverflow.com/questions/12558327/google-test-in-visual-studio-2012
+    if (MSVC11) 
+      add_definitions(-D_VARIADIC_MAX=10)
+    endif()
 elseif (APPLE)
     add_definitions(-DGTEST_USE_OWN_TR1_TUPLE=1)
 endif()
